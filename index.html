@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="demo">
+	<head>
+		<title>Customers</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="hello.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="Hello">
+			<ul ng-repeat="x in greeting">
+					<li>id = {{x.id}} <button ng-click="Delete(x.id)">Delete</button><br>
+						name ={{x.name}}<br>
+						phone ={{x.phone}}<br>
+
+						<input type="text" ng-model="$uname" placeholder="Enter Name" required>
+						<input type="text" ng-model="$uphone" placeholder="Enter Phone"required>
+						<button ng-click="update(x.id,$uname,$uphone)">Update</button>
+					</li>
+				
+			</ul><br>
+			{{myJSON}}
+			<BR><BR>
+			
+			<input type="text" ng-model="$newid" placeholder="Enter Id" required>
+			<input type="text" ng-model="$newname" placeholder="Enter Name" required>
+			<input type="text" ng-model="$newphone" placeholder="Enter Phone"required>
+			<button ng-click="add($newid,$newname,$newphone)">Add Customers</button>
+		</div>
+	</body>
+</html>
